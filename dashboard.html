@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Monitoring Dashboard</title>
+    
+    <link class="styles" rel="stylesheet" href="siva.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <h1>📊 Waste Monitoring Dashboard</h1>
+        <p>Select a district to view analytics and its real-time map location.</p>
+
+        <div class="control-box">
+            <label for="districtSelect"><b>Choose a District:</b></label>
+            <select id="districtSelect" onchange="onDistrictChange()">
+                <option value="">-- Select District --</option>
+                </select>
+        </div>
+
+        <div class="stats-container" id="statsContainer" style="display: none;">
+            <div class="stat-card">
+                <h3>Total Waste</h3>
+                <p id="totalWasteVal">0 Tons/day</p>
+            </div>
+            <div class="stat-card">
+                <h3>Waste Capacity Level</h3>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progressFill">0%</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="map"></div>
+
+        <div style="text-align: center; margin-bottom: 30px;">
+            <button class="loc-btn" onclick="getLocation()">Locate My Position</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="siva.js"></script>
+</body>
+</html>
